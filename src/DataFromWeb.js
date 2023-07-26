@@ -12,13 +12,22 @@ function processResponse(response){
     let jsonPromise = response.json()                                  //converting the incoming data in json and sending it to get stored
     jsonPromise.then(getDataFromResponse)
 }
+function clickingButton(){
 
-let responsePromise = fetch('https://jsonplaceholder.typicode.com/comments')
-responsePromise.then(processResponse)                                          // Storing data from web then sending it to get processed
+    let pid = document.getElementById("t1").value
+    let url = "https://jsonplaceholder.typicode.com/posts/"+pid+"/comments"
+
+    let responsePromise = fetch(url)
+    responsePromise.then(processResponse)  
+}
+                                                                                 // Storing data from web then sending it to get processed
 
 return(
     <>
     <h1> Comments</h1>
+
+    <input type="text" id="t1"></input>
+    <input type="Button" id="btn1" onClick={clickingButton}></input>
     <table>
         {
             records.map((rec) =>

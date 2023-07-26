@@ -4,11 +4,12 @@ import  Children  from './Children';
 import  Records2  from './record2';
 import  Events  from './Events';
 import  Data2  from './data';
+import DataFromWeb from './DataFromWeb';
 
 
 function App() {
   return (
-  <Data2/>
+  <DataFromWeb/>
   );
 }
 
